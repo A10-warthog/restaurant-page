@@ -16,6 +16,8 @@ const getAttribute = (elm, attr) => elm.getAttribute(attr);
 
 const setAttribute = (elm, attr, val) => (elm.setAttribute(attr, val));
 
+const addText = (elm, text) => { elm.textContent = text };
+
 //  create elements 
 const makeElement = (elm, val) => {
   const arr = [];
@@ -26,6 +28,7 @@ const makeElement = (elm, val) => {
 
 const DOM = (() => ({
   addClass,
+  addText,
   removeClass,
   putChild,
   removeElm,
@@ -34,7 +37,7 @@ const DOM = (() => ({
   addListener,
   removeListener,
   makeElement,
-}));
+}))();
 
 // export DOM object
 export default DOM;
