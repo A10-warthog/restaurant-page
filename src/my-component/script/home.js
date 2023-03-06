@@ -76,4 +76,5 @@ export default class Home {
   set subTitle(data) {
     this.#subTitle = data;
   }
+  
 }

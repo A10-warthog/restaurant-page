@@ -4,7 +4,7 @@ export default class Contact {
   #title;  
   
   #phone;  
-  
+
   #email;
   
   constructor({ title, phone, email }) {
@@ -36,9 +36,6 @@ export default class Contact {
     const emailId = DOM.makeElement('span', 1);
     DOM.addClass(emailId, 'contact__email_id');
 
-    DOM.putChild(phone, phoneNo);
-    DOM.putChild(email, emailId);
-
     return { contact, contactBox, title, phone, phoneNo, email, emailId };
   })();
 
@@ -52,7 +49,9 @@ export default class Contact {
 
   #combineElement() {
     this.#addData();
-    const { contact, contactBox, title, phone, email } = this.#makeComponent;
+    const { contact, contactBox, title, phone, email, phoneNo, emailId } = this.#makeComponent;
+    DOM.putChild(phone, phoneNo);
+    DOM.putChild(email, emailId);
     DOM.putChild(contact, contactBox);
     DOM.putChild(contactBox, title);
     DOM.putChild(contactBox, phone);

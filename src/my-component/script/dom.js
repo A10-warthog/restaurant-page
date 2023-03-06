@@ -1,6 +1,9 @@
 // Dom abstraction to make code readable a bit more.
 
-const putChild = (parent, child) => (parent.appendChild(child));
+const putChild = (parent, ...child) => {
+  if (child.length === 1) parent.appendChild(child[0]);
+  else child.forEach(elm => { parent.appendChild(elm); });
+}
 
 const addClass = (elm, className) => (elm.classList.add(className)); 
 
