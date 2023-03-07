@@ -15,6 +15,7 @@ export default class Home {
   }
 
   // create html elements for home page
+  // eslint-disable-next-line class-methods-use-this
   #Component = () => {
     // create root and parent element
     const home = DOM.makeElement("div", 1);
@@ -76,5 +77,4 @@ export default class Home {
   set subTitle(data) {
     this.#subTitle = data;
   }
-  
 }
