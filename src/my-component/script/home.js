@@ -20,6 +20,9 @@ export default class Home {
     // create root and parent element
     const home = DOM.makeElement("div", 1);
     DOM.addClass(home, "home");
+    // create div to put image
+    const image = DOM.makeElement('div', 1);
+    DOM.addClass(image, 'home__image');
     // all elements are inside this
     const homeBox = DOM.makeElement("div", 1);
     DOM.addClass(homeBox, "home__box");
@@ -33,15 +36,15 @@ export default class Home {
     const description = DOM.makeElement("p", 1);
     DOM.addClass(description, "home__description");
 
-    return { home, homeBox, title, subTitle, description };
+    return { home, homeBox, title, subTitle, description, image };
   };
 
   // add data to elements
   #AddData = () => {
     const home = this.#Component();
-    DOM.addText(home.title, this.title);
-    DOM.addText(home.subTitle, this.subTitle);
-    DOM.addText(home.description, this.description);
+    DOM.addText(home.title, this.#title);
+    DOM.addText(home.subTitle, this.#subTitle);
+    DOM.addText(home.description, this.#description);
     return home;
   };
 
@@ -49,10 +52,11 @@ export default class Home {
   #structureElm = () => {
     const myHome = this.#AddData();
     const keys = Object.keys(myHome);
+    DOM.putChild(myHome.home, myHome.image);
     DOM.putChild(myHome.home, myHome.homeBox);
     // append child to myHome.homeBox
     for (let i = 0; i < keys.length; i += 1) {
-      if (keys[i] !== "home" && keys[i] !== "homeBox")
+      if (keys[i] !== "home" && keys[i] !== "homeBox" && keys[i] !== 'image')
         DOM.putChild(myHome.homeBox, myHome[keys[i]]);
     }
     return myHome.home;

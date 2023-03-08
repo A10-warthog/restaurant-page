@@ -32,7 +32,7 @@ export const contactData = {
   email: "someexpample@xyz.com",
 };
 
-export const home = {
+export const homeData = {
   title: "The Italian Cuisine",
   subTitle: "Experience The Best of Italian Food and Wine",
   description:
