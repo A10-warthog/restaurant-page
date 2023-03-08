@@ -1,5 +1,7 @@
 // Dom abstraction to make code readable a bit more.
 
+import "../styles/style.css";
+
 const putChild = (parent, ...child) => {
   if (child.length === 1) parent.appendChild(child[0]);
   else
@@ -19,8 +21,9 @@ const removeElm = (elm) => elm.remove();
 
 const addListener = (elm, event, func) => elm.addEventListener(event, func);
 
-const removeListener = (elm, event, func) =>
+const removeListener = (elm, event, func) => {
   elm.removeEventListener(event, func);
+};
 
 const getAttribute = (elm, attr) => elm.getAttribute(attr);
 
