@@ -113,7 +113,7 @@ export default class Menu {
   };
 
   // return root element
-  get menu() {
+  get div() {
     this.#addText();
     return this.#makeElement.menu;
   }

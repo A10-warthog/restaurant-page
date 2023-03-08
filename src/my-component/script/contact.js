@@ -59,7 +59,7 @@ export default class Contact {
     return contact;
   }
 
-  get contact() {
+  get div() {
     return this.#combineElement();
   }
 

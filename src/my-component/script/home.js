@@ -59,7 +59,7 @@ export default class Home {
   };
 
   // return structured dom element
-  get homeComponent() {
+  get div() {
     return this.#structureElm();
   }
 
