@@ -32,7 +32,27 @@ const nav = (() => {
     contact: false,
   };
 
-  return { buttonBox, state };
+  if (state.home === true)
+    DOM.addClass(
+      buttons.find(
+        (button) => DOM.getAttribute(button, "data-name") === "home"
+      ),
+      "button__page--active"
+    );
+  const changeState = (active) => {
+    Object.keys(state).forEach((key) => {
+      if (key === active) state[key] = true;
+      else state[key] = false;
+    });
+
+    buttons.forEach((button) => {
+      const data = DOM.getAttribute(button, "data-name");
+      if (data === active) DOM.addClass(button, "button__page--active");
+      else DOM.removeClass(button, "button__page--active");
+    });
+  };
+
+  return { buttonBox, changeState, state };
 })();
 
 export default nav;

@@ -1,6 +1,6 @@
 export const menuData = {
   title: "Menu",
-  subTitle: ["appetizer", "main course", "drinks"],
+  subTitle: ["Appetizer", "Main Course", "Drinks"],
   list: {
     appetizer: [
       ["Herbed Chickpea Bruschetta", "$5.99"],

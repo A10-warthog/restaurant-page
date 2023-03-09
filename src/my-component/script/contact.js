@@ -25,13 +25,13 @@ export default class Contact {
     DOM.addClass(title, 'contact__title');
     // element for phone key
     const phone = DOM.makeElement('p', 1);
-    DOM.addClass(phone, 'contact__phone');
+    DOM.addClass(phone, 'contact__data');
     // element for phone number
     const phoneNo = DOM.makeElement('span', 1);
     DOM.addClass(phoneNo, 'contact__phone_no');
     // element for email key
     const email = DOM.makeElement('p', 1);
-    DOM.addClass(email, 'contact__email');
+    DOM.addClass(email, 'contact__data');
     // element for email id
     const emailId = DOM.makeElement('span', 1);
     DOM.addClass(emailId, 'contact__email_id');
@@ -43,8 +43,8 @@ export default class Contact {
     DOM.addText( this.#makeComponent.title, this.#title);
     DOM.addText(this.#makeComponent.phoneNo, this.#phone);
     DOM.addText(this.#makeComponent.emailId, this.#email);
-    DOM.addText(this.#makeComponent.phone, 'Phone Number :');
-    DOM.addText(this.#makeComponent.email, 'Email :');
+    DOM.addText(this.#makeComponent.phone, 'Phone Number : ');
+    DOM.addText(this.#makeComponent.email, 'Email : ');
   }
 
   #combineElement() {

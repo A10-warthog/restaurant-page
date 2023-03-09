@@ -9,10 +9,10 @@ import "../styles/style.css";
 const home = new Home(data.homeData);
 const menu = new Menu(data.menuData);
 const contact = new Contact(data.contactData);
-
 const content = DOM.makeElement("div", 1);
 
 DOM.setAttribute(content, "id", "content");
+DOM.addClass(content, 'content');
 DOM.putChild(content, nav.buttonBox, home.div);
 DOM.putChild(document.body, content);
 
@@ -29,10 +29,7 @@ const onButtonClick = (event) => {
     // append contact to content
     if (active === "contact") DOM.putChild(content, contact.div);
     // make key with true property not clickable
-    Object.keys(nav.state).forEach((key) => {
-      if (key === active) nav.state[key] = true;
-      else nav.state[key] = false;
-    });
+    nav.changeState(active);
   }
 };
 

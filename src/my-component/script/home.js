@@ -31,7 +31,7 @@ export default class Home {
     DOM.addClass(title, "home__title");
     // create element for sub heading
     const subTitle = DOM.makeElement("h3", 1);
-    DOM.addClass(subTitle, "home__sub_Title");
+    DOM.addClass(subTitle, "home__sub_title");
     // create element for description
     const description = DOM.makeElement("p", 1);
     DOM.addClass(description, "home__description");
@@ -68,7 +68,7 @@ export default class Home {
   }
 
   // set new description
-  set descr(data) {
+  set description(data) {
     this.#description = data;
   }
 
