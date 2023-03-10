@@ -60,7 +60,7 @@ button {
   font-size: 1.7rem;
   font-weight: bold;
   cursor: pointer;
-  transition: padding ease 150ms;
+  transition: padding ease-in-out 170ms;
 }
 
 .button__page--active {
